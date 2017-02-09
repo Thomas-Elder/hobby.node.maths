@@ -1,4 +1,4 @@
-var arithmetic = require('src/arithmetic');
+var arithmetic = require('./src/arithmetic');
 
 var Maths = function(){};
 
