@@ -2,6 +2,7 @@
   "name": "maths",
   "version": "1.0.0",
   "description": "A module to provide some basic mathematic functions",
+  "private": true,
   "main": "maths.js",
   "directories": {
     "test": "test"
@@ -14,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/Thomas-Elder/hobby.node.maths.git"
   },
-  "author": "Thomas",
+  "author": "Thomas <thombsaway@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Thomas-Elder/hobby.node.maths/issues"
