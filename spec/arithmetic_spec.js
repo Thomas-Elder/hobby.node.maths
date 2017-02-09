@@ -1,10 +1,6 @@
-var Maths = require('../maths');
+var maths = require('../maths');
 
-describe('Maths', function(){
-
-  var maths = new Maths();
-
-
+describe('Arithmetic', function(){
 
   describe('Sum', function(){
       
