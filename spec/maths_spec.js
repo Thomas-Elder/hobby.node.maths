@@ -28,5 +28,28 @@ describe('Maths', function(){
         }
       });
     });
+
+    describe('Subtract', function(){
+        
+      it('should return -1 when given 2 and 3', function(done){
+          
+        var expected = -1;
+        var result = maths.subtract(2, 3);
+
+        expect(result).toEqual(expected);
+
+        done();
+      });
+      
+      it('should throw a NaN error when given a non-numeric parameter', function(done){
+        
+        try {
+          maths.subtract("two", 3);
+        } catch (error) {
+
+          done();
+        }
+      });
+    });
   });
 });

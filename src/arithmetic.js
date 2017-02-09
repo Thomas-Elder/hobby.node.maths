@@ -7,6 +7,14 @@ var sum = function(a, b) {
   return a + b;
 };
 
+var subtract = function(a, b) {
+  if (isNaN(a) || isNaN(b))
+    throw new Error('Cannot subtract non-numeric values');
+
+  return a - b;
+};
+
 module.exports = {
-  sum
+  sum,
+  subtract
 };
