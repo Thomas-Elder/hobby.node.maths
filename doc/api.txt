@@ -1,0 +1,18 @@
+# API Planning
+
+To start let's decide on a minimal API, a set of functions we want to support.
+
+We could roll these into a sub-module, arithmetic;
+* sum
+* subtract
+* multiply
+* divide
+
+Then the next step (might be 2.0 given it'll change the API) could be a statistics sub-module with things like;
+* mean
+* median
+* standard deviation
+* min
+* max
+etc.
+
