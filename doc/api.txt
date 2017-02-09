@@ -16,3 +16,4 @@ Then the next step (might be 2.0 given it'll change the API) could be a statisti
 * max
 etc.
 
+Ok so as of version 1.0.2, we have a reasonably functional arithmetic module. I'm going to try publish it, then use it in an unrelated app. 
