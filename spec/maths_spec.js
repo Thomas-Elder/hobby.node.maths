@@ -74,5 +74,38 @@ describe('Maths', function(){
         }
       });
     });
+
+    describe('Divide', function(){
+        
+      it('should return 2 when given 6 and 3', function(done){
+          
+        var expected = 2;
+        var result = maths.divide(6, 3);
+
+        expect(result).toEqual(expected);
+
+        done();
+      });
+      
+      it('should throw a NaN error when given a non-numeric parameter', function(done){
+        
+        try {
+          maths.divide("two", 3);
+        } catch (error) {
+
+          done();
+        }
+      });
+
+      it('should throw a divide by zero error when given zero as a second parameter', function(done){
+        
+        try {
+          maths.divide(6, 0);
+        } catch (error) {
+
+          done();
+        }
+      });
+    });
   });
 });
