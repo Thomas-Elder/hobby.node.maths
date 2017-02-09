@@ -1,0 +1,22 @@
+{
+  "name": "maths",
+  "version": "1.0.0",
+  "description": "A module to provide some basic mathematic functions",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thomas-Elder/hobby.node.maths.git"
+  },
+  "author": "Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thomas-Elder/hobby.node.maths/issues"
+  },
+  "homepage": "https://github.com/Thomas-Elder/hobby.node.maths#readme"
+}
