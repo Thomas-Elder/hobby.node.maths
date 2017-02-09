@@ -4,5 +4,6 @@ var Maths = function(){};
 
 Maths.prototype.sum = arithmetic.sum;
 Maths.prototype.subtract = arithmetic.subtract;
+Maths.prototype.multiply = arithmetic.multiply;
 
 module.exports = Maths;
