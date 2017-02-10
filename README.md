@@ -11,28 +11,29 @@ The module currently only has functions for basic arithmetic; sum, subtract, mul
 ## API
 The module exposes the following functions:
 
-### sum
+### Arithmetic
+#### sum
 `sum(number, number);`
 
 Adds the two parameters together.
 
 Throws an error if either parameter is not a number.
 
-### subtract
+#### subtract
 `subtract(number, number);`
 
 Subtracts the second parameter from the first.
 
 Throws an error if either parameter is not a number.
 
-### multiply
+#### multiply
 `multiply(number, number);`
 
 Multiplies the two parameters together.
 
 Throws an error if either parameter is not a number.
 
-### divide
+#### divide
 `divide(dividend, divisor);`
 
 Divides the dividend by the divisor. 
@@ -40,9 +41,26 @@ Divides the dividend by the divisor.
 Throws an error if either parameter is not a number.
 Throws an error if the divisor is zero. 
 
+### Statistics
+#### sampleSize
+`sampleSize(sample);`
+
+Returns the size of the sample. 
+
+Throws an error if the sample contains non-numeric elements.
+Throws an error if the sample is empty.
+
+#### mean
+`mean(sample);`
+
+Returns the mean of the sample.
+
+Throws an error if the sample contains non-numeric elements.
+Throws an error if the sample is empty.
+
 ## Changelog
-###V1.0.7
+###v1.0.7
 Added API information to the README.md.
 
-###V1.0.4
+###v1.0.4
 First release. The module currently only has functions for basic arithmetic.
