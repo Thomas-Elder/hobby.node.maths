@@ -17,3 +17,7 @@ Then the next step (might be 2.0 given it'll change the API) could be a statisti
 etc.
 
 Ok so as of version 1.0.2, we have a reasonably functional arithmetic module. I'm going to try publish it, then use it in an unrelated app. 
+
+v1.0.7 is on NPM, and I managed to install and use it from a separate project.
+
+I think I've been using the versioning incorrectly, in that I kind of used it for every commit. It should really only be for every release. 
