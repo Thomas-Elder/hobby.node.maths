@@ -13,6 +13,7 @@ module.exports = {
   mean: statistics.mean,
   median: statistics.median,
   mode: statistics.mode,
+  range: statistics.range,
   variance: statistics.variance,
   standardDeviation: statistics.standardDeviation
 };

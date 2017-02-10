@@ -155,6 +155,39 @@ describe('Statistics', function(){
     });
   });
 
+  describe('range', function(){
+      
+    it('should return 157 when given the test sample', function(done){
+        
+      var expected = 157;
+      var result = maths.range(sample);
+
+      expect(result).toEqual(expected);
+
+      done();
+    });
+    
+    it('should throw a NaN error when the sample contains a non-numeric character', function(done){
+
+      try {
+        maths.range(sampleNaN);
+      } catch (error) {
+        expect(error.message).toEqual('NaN');
+        done();
+      }
+    });
+
+    it('should throw an empty sample error the sample contains no elements', function(done){
+
+      try {
+        maths.range(sampleEmpty);
+      } catch (error) {
+        expect(error.message).toEqual('Empty sample');
+        done();
+      }
+    });
+  });
+
   /*
   describe('variance', function(){
       

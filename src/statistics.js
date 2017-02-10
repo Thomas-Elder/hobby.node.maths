@@ -84,6 +84,31 @@ var mode = function(sample) {
   return currentMode;
 };
 
+var range = function(sample){
+
+  for (var i = 0; i < sample.length; i++) {
+    if (isNaN(sample[i]))
+      throw new Error('NaN');
+  }
+
+  if (sample.length === 0)
+    throw new Error('Empty sample');
+  
+  var min = sample[0];
+  var max = sample[0];
+
+  for (var i = 0; i < sample.length; i++) {
+
+    if(sample[i] < min)
+      min = sample[i];
+    
+    if(sample[i] > max)
+      max = sample[i];
+  }
+
+  return max - min;
+};
+
 var variance = function(){
 
 };
@@ -97,6 +122,7 @@ module.exports = {
   mean,
   median,
   mode,
+  range,
   variance,
   standardDeviation
 }
