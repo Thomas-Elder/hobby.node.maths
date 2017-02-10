@@ -4,7 +4,7 @@ describe('Statistics', function(){
 
   describe('sampleSize', function(){
       
-    it('should return 5 when given 2 and 3', function(done){
+    it('should return 10 when given a sample with 10 values', function(done){
       
       var sample = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 

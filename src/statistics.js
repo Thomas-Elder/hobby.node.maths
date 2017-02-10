@@ -1,6 +1,14 @@
 
 var sampleSize = function(sample) {
-  return 10;
+  
+  console.log(sample);
+
+  for (var i = 0; i < sample.length; i++) {
+    if (isNaN(sample[i]))
+      throw new Error('NaN');
+  }
+  
+  return sample.length;
 };
 
 var mean = function() {
