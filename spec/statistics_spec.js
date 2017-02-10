@@ -121,40 +121,41 @@ describe('Statistics', function(){
     });
   });
 
-  /*
+  
   describe('mode', function(){
       
-    it('should return 2 when given 6 and 3', function(done){
+    it('should return 25 when given the test sample', function(done){
         
-      var expected = 2;
-      var result = maths.divide(6, 3);
+      var expected = 25;
+      var result = maths.mode(sample);
 
       expect(result).toEqual(expected);
 
       done();
     });
     
-    it('should throw a NaN error when given a non-numeric parameter', function(done){
-      
-      try {
-        maths.divide("two", 3);
-      } catch (error) {
+    it('should throw a NaN error when the sample contains a non-numeric character', function(done){
 
+      try {
+        maths.mode(sampleNaN);
+      } catch (error) {
+        expect(error.message).toEqual('NaN');
         done();
       }
     });
 
-    it('should throw a divide by zero error when given zero as a second parameter', function(done){
-      
-      try {
-        maths.divide(6, 0);
-      } catch (error) {
+    it('should throw an empty sample error the sample contains no elements', function(done){
 
+      try {
+        maths.mode(sampleEmpty);
+      } catch (error) {
+        expect(error.message).toEqual('Empty sample');
         done();
       }
     });
   });
 
+  /*
   describe('variance', function(){
       
     it('should return 2 when given 6 and 3', function(done){

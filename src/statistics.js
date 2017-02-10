@@ -53,8 +53,35 @@ var median = function(sample) {
   return sample[Math.floor(sample.length/2)]; 
 };
 
-var mode = function() {
+var mode = function(sample) {
 
+  for (var i = 0; i < sample.length; i++) {
+    if (isNaN(sample[i]))
+      throw new Error('NaN');
+  }
+
+  if (sample.length === 0)
+    throw new Error('Empty sample');
+
+  var high = 0;
+  var currentMode = 0;
+
+  for (var i = 0; i < sample.length; i++) {
+    
+    var count = 1;
+    
+    for (var k = 0; k < sample.length; k++) {
+      if (sample[i] === sample[k])
+        count++;
+    }
+
+    if (count > high) {
+      currentMode = sample[i];
+      high = count;
+    } 
+  }
+
+  return currentMode;
 };
 
 var variance = function(){
