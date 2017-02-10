@@ -58,6 +58,52 @@ Returns the mean of the sample.
 Throws an error if the sample contains non-numeric elements.
 Throws an error if the sample is empty.
 
+#### median
+`median(sample);`
+
+Returns the median of the sample.
+
+Throws an error if the sample contains non-numeric elements.
+Throws an error if the sample is empty.
+
+#### mode
+`mode(sample);`
+
+Returns the mode of the sample.
+
+Throws an error if the sample contains non-numeric elements.
+Throws an error if the sample is empty.
+
+Note this currently only supports single mode data sets. Support for multi-modal sets is in the works.
+
+#### range
+`range(sample);`
+
+Returns the range of the sample.
+
+Throws an error if the sample contains non-numeric elements.
+Throws an error if the sample is empty.
+
+#### variance
+`variance(sample);`
+
+Returns the variance of the sample.
+
+Throws an error if the sample contains non-numeric elements.
+Throws an error if the sample is empty.
+
+Note there's no precision control on the return value at the moment.
+
+#### standardDeviation
+`standardDeviation(sample);`
+
+Returns the standard deviation of the sample.
+
+Throws an error if the sample contains non-numeric elements.
+Throws an error if the sample is empty.
+
+Note there's no precision control on the return value at the moment.
+
 ## Changelog
 ###v1.0.7
 Added API information to the README.md.
