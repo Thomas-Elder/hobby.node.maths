@@ -109,12 +109,37 @@ var range = function(sample){
   return max - min;
 };
 
-var variance = function(){
+var variance = function(sample){
 
+  for (var i = 0; i < sample.length; i++) {
+    if (isNaN(sample[i]))
+      throw new Error('NaN');
+  }
+
+  if (sample.length === 0)
+    throw new Error('Empty sample');
+
+  var sum = 0;
+
+  for (var i = 0; i < sample.length; i++) {
+    sum += (sample[i] - mean(sample)) * (sample[i] - mean(sample));
+  }
+
+  return sum / sample.length;
 };
 
-var standardDeviation = function() {
+var standardDeviation = function(sample) {
 
+  for (var i = 0; i < sample.length; i++) {
+    if (isNaN(sample[i]))
+      throw new Error('NaN');
+  }
+
+  if (sample.length === 0)
+    throw new Error('Empty sample');
+
+  // be nice to make my own sqrt function sometime.
+  return Math.sqrt(variance(sample));
 };
 
 module.exports = {

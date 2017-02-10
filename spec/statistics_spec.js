@@ -77,7 +77,7 @@ describe('Statistics', function(){
       }
     });
   });
-  sampleOdd
+
   describe('median', function(){
       
     it('should return 8.5 when given the test sample with an even number of elements', function(done){
@@ -120,7 +120,6 @@ describe('Statistics', function(){
       }
     });
   });
-
   
   describe('mode', function(){
       
@@ -188,13 +187,12 @@ describe('Statistics', function(){
     });
   });
 
-  /*
   describe('variance', function(){
       
-    it('should return 2 when given 6 and 3', function(done){
+    it('should return 1131.5625 when given the test sample', function(done){
         
-      var expected = 2;
-      var result = maths.divide(6, 3);
+      var expected = 1131.5625;
+      var result = maths.variance(sample);
 
       expect(result).toEqual(expected);
 
@@ -204,9 +202,9 @@ describe('Statistics', function(){
     it('should throw a NaN error when given a non-numeric parameter', function(done){
       
       try {
-        maths.divide("two", 3);
+        maths.variance(sampleNaN);
       } catch (error) {
-
+        expect(error.message).toEqual('NaN');
         done();
       }
     });
@@ -214,9 +212,9 @@ describe('Statistics', function(){
     it('should throw a divide by zero error when given zero as a second parameter', function(done){
       
       try {
-        maths.divide(6, 0);
+        maths.variance(sampleEmpty);
       } catch (error) {
-
+        expect(error.message).toEqual('Empty sample');
         done();
       }
     });
@@ -224,10 +222,10 @@ describe('Statistics', function(){
 
   describe('standardDeviation', function(){
       
-    it('should return 2 when given 6 and 3', function(done){
+    it('should return 33.638705385314694 when given the test sample', function(done){
         
-      var expected = 2;
-      var result = maths.divide(6, 3);
+      var expected = 33.638705385314694;
+      var result = maths.standardDeviation(sample);
 
       expect(result).toEqual(expected);
 
@@ -237,9 +235,9 @@ describe('Statistics', function(){
     it('should throw a NaN error when given a non-numeric parameter', function(done){
       
       try {
-        maths.divide("two", 3);
+        maths.standardDeviation(sampleNaN);
       } catch (error) {
-
+        expect(error.message).toEqual('NaN');
         done();
       }
     });
@@ -247,11 +245,11 @@ describe('Statistics', function(){
     it('should throw a divide by zero error when given zero as a second parameter', function(done){
       
       try {
-        maths.divide(6, 0);
+        maths.standardDeviation(sampleEmpty);
       } catch (error) {
-
+        expect(error.message).toEqual('Empty sample');
         done();
       }
     });
-  });*/
+  });
 });
