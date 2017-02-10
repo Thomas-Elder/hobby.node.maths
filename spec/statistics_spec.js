@@ -3,6 +3,7 @@ var maths = require('../maths');
 describe('Statistics', function(){
 
   var sample = [11, 23, 25, 158, 30, 21, 25, 16, 1, 26, 25, 29, 30, 25, 24, 23];
+  var sampleOdd = [11, 23, 25, 158, 30, 21, 25, 16, 1, 26, 25, 29, 30, 25, 24, 23, 31];
   var sampleNaN = [11, 23, 25, "thing", 30, 21, 25, 16, 1, 26, 25, 29, 30, 25, 24, 23];
   var sampleEmpty = [];
 
@@ -76,13 +77,23 @@ describe('Statistics', function(){
       }
     });
   });
-  
+  sampleOdd
   describe('median', function(){
       
-    it('should return 1 when given the test sample', function(done){
+    it('should return 8.5 when given the test sample with an even number of elements', function(done){
+
+      var expected = 8.5;
+      var result = maths.median(sample);
+
+      expect(result).toEqual(expected);
+
+      done();
+    });
+
+    it('should return 1 when given the test sample with an odd number of elements', function(done){
 
       var expected = 1;
-      var result = maths.median(sample);
+      var result = maths.median(sampleOdd);
 
       expect(result).toEqual(expected);
 

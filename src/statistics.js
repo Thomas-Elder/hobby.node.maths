@@ -40,6 +40,16 @@ var median = function(sample) {
   if (sample.length === 0)
     throw new Error('Empty sample');
 
+  /**
+   * If the sample.length is even, we need to find the mean of the two values
+   * either side of the true middle. sample.length / 2 will give us the index of
+   * the value to the right of this middle, so we need to add it to the index
+   * 1 to the left of that, and divide that sum by 2. 
+   */
+  if (sample.length % 2 === 0) {
+    return (sample[sample.length / 2] + sample[(sample.length / 2) - 1]) / 2;
+  }
+
   return sample[Math.floor(sample.length/2)]; 
 };
 
