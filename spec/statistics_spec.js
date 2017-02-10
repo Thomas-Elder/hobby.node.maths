@@ -23,36 +23,64 @@ describe('Statistics', function(){
       try {
         maths.sampleSize(sample);
       } catch (error) {
+        expect(error.message).toEqual('NaN');
+        done();
+      }
+    });
 
+    it('should throw an empty sample error the sample contains no elements', function(done){
+      
+      var sample = [];
+
+      try {
+        maths.sampleSize(sample);
+      } catch (error) {
+        expect(error.message).toEqual('Empty sample');
         done();
       }
     });
   });
 
-  /*
+  
   describe('mean', function(){
       
-    it('should return -1 when given 2 and 3', function(done){
-        
-      var expected = -1;
-      var result = maths.subtract(2, 3);
+    it('should return 10 when given the test sample', function(done){
+      
+      var sample = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      var expected = 5.5;
+      var result = maths.mean(sample);
 
       expect(result).toEqual(expected);
 
       done();
     });
     
-    it('should throw a NaN error when given a non-numeric parameter', function(done){
+    it('should throw a NaN error when the sample contains a non-numeric character', function(done){
       
-      try {
-        maths.subtract("two", 3);
-      } catch (error) {
+      var sample = [1, 2, 3, 4, 5, 6, "thing", 8, 9, 10];
 
+      try {
+        maths.mean(sample);
+      } catch (error) {
+        expect(error.message).toEqual('NaN');
+        done();
+      }
+    });
+
+    it('should throw an empty sample error the sample contains no elements', function(done){
+      
+      var sample = [];
+
+      try {
+        maths.mean(sample);
+      } catch (error) {
+        expect(error.message).toEqual('Empty sample');
         done();
       }
     });
   });
-
+  /*
   describe('median', function(){
       
     it('should return 6 when given 2 and 3', function(done){
