@@ -2,13 +2,15 @@ var maths = require('../maths');
 
 describe('Statistics', function(){
 
+  var sample = [11, 23, 25, 158, 30, 21, 25, 16, 1, 26, 25, 29, 30, 25, 24, 23];
+  var sampleNaN = [11, 23, 25, "thing", 30, 21, 25, 16, 1, 26, 25, 29, 30, 25, 24, 23];
+  var sampleEmpty = [];
+
   describe('sampleSize', function(){
       
     it('should return 11 when given a sample with 10 values', function(done){
-      
-      var sample = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
-      var expected = 11;
+      var expected = 16;
       var result = maths.sampleSize(sample);
 
       expect(result).toEqual(expected);
@@ -18,10 +20,8 @@ describe('Statistics', function(){
     
     it('should throw a NaN error when the sample contains a non-numeric character', function(done){
       
-      var sample = [1, 2, 3, 4, 5, 6, "thing", 8, 9, 10, 11];
-
       try {
-        maths.sampleSize(sample);
+        maths.sampleSize(sampleNaN);
       } catch (error) {
         expect(error.message).toEqual('NaN');
         done();
@@ -33,7 +33,7 @@ describe('Statistics', function(){
       var sample = [];
 
       try {
-        maths.sampleSize(sample);
+        maths.sampleSize(sampleEmpty);
       } catch (error) {
         expect(error.message).toEqual('Empty sample');
         done();
@@ -44,11 +44,9 @@ describe('Statistics', function(){
   
   describe('mean', function(){
       
-    it('should return 6 when given the test sample', function(done){
-      
-      var sample = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    it('should return 30.75 when given the test sample', function(done){
 
-      var expected = 6;
+      var expected = 30.75;
       var result = maths.mean(sample);
 
       expect(result).toEqual(expected);
@@ -57,11 +55,9 @@ describe('Statistics', function(){
     });
     
     it('should throw a NaN error when the sample contains a non-numeric character', function(done){
-      
-      var sample = [1, 2, 3, 4, 5, 6, "thing", 8, 9, 10, 11];
 
       try {
-        maths.mean(sample);
+        maths.mean(sampleNaN);
       } catch (error) {
         expect(error.message).toEqual('NaN');
         done();
@@ -73,7 +69,7 @@ describe('Statistics', function(){
       var sample = [];
 
       try {
-        maths.mean(sample);
+        maths.mean(sampleEmpty);
       } catch (error) {
         expect(error.message).toEqual('Empty sample');
         done();
@@ -83,11 +79,9 @@ describe('Statistics', function(){
   
   describe('median', function(){
       
-    it('should return 6 when given the test sample', function(done){
-        
-      var sample = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    it('should return 1 when given the test sample', function(done){
 
-      var expected = 6;
+      var expected = 1;
       var result = maths.median(sample);
 
       expect(result).toEqual(expected);
@@ -96,11 +90,9 @@ describe('Statistics', function(){
     });
     
     it('should throw a NaN error when the sample contains a non-numeric character', function(done){
-      
-      var sample = [1, 2, 3, 4, 5, 6, "thing", 8, 9, 10];
 
       try {
-        maths.median(sample);
+        maths.median(sampleNaN);
       } catch (error) {
         expect(error.message).toEqual('NaN');
         done();
@@ -108,11 +100,9 @@ describe('Statistics', function(){
     });
 
     it('should throw an empty sample error the sample contains no elements', function(done){
-      
-      var sample = [];
 
       try {
-        maths.median(sample);
+        maths.median(sampleEmpty);
       } catch (error) {
         expect(error.message).toEqual('Empty sample');
         done();
