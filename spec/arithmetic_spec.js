@@ -20,6 +20,7 @@ describe('Arithmetic', function(){
         maths.sum("two", 3);
       } catch (error) {
 
+        expect(error.message).toEqual('NaN');
         done();
       }
     });
@@ -42,7 +43,7 @@ describe('Arithmetic', function(){
       try {
         maths.subtract("two", 3);
       } catch (error) {
-
+        expect(error.message).toEqual('NaN');
         done();
       }
     });
@@ -65,7 +66,7 @@ describe('Arithmetic', function(){
       try {
         maths.multiply("two", 3);
       } catch (error) {
-
+        expect(error.message).toEqual('NaN');
         done();
       }
     });
@@ -88,7 +89,7 @@ describe('Arithmetic', function(){
       try {
         maths.divide("two", 3);
       } catch (error) {
-
+        expect(error.message).toEqual('NaN');
         done();
       }
     });
@@ -98,7 +99,7 @@ describe('Arithmetic', function(){
       try {
         maths.divide(6, 0);
       } catch (error) {
-
+        expect(error.message).toEqual('Zero divisor');
         done();
       }
     });

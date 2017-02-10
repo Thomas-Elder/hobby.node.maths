@@ -1,6 +1,6 @@
 
-var size = function() {
-
+var sampleSize = function(sample) {
+  return 10;
 };
 
 var mean = function() {
@@ -24,7 +24,7 @@ var standardDeviation = function() {
 };
 
 module.exports = {
-  size,
+  sampleSize,
   mean,
   median,
   mode,

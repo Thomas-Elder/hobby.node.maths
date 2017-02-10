@@ -2,22 +2,26 @@ var maths = require('../maths');
 
 describe('Statistics', function(){
 
-  describe('size', function(){
+  describe('sampleSize', function(){
       
     it('should return 5 when given 2 and 3', function(done){
-        
-      var expected = 5;
-      var result = maths.sum(2, 3);
+      
+      var sample = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      var expected = 10;
+      var result = maths.sampleSize(sample);
 
       expect(result).toEqual(expected);
 
       done();
     });
     
-    it('should throw a NaN error when given a non-numeric parameter', function(done){
+    it('should throw a NaN error when the sample contains a non-numeric character', function(done){
       
+      var sample = [1, 2, 3, 4, 5, 6, "thing", 8, 9, 10];
+
       try {
-        maths.sum("two", 3);
+        maths.sampleSize(sample);
       } catch (error) {
 
         done();
@@ -25,6 +29,7 @@ describe('Statistics', function(){
     });
   });
 
+  /*
   describe('mean', function(){
       
     it('should return -1 when given 2 and 3', function(done){
@@ -168,5 +173,5 @@ describe('Statistics', function(){
         done();
       }
     });
-  });
+  });*/
 });

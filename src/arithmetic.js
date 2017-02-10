@@ -2,7 +2,7 @@
 var sum = function(a, b) {
 
   if (isNaN(a) || isNaN(b))
-    throw new Error('Cannot sum non-numeric values');
+    throw new Error('NaN');
 
   return a + b;
 };
@@ -10,7 +10,7 @@ var sum = function(a, b) {
 var subtract = function(a, b) {
   
   if (isNaN(a) || isNaN(b))
-    throw new Error('Cannot subtract non-numeric values');
+    throw new Error('NaN');
 
   return a - b;
 };
@@ -18,7 +18,7 @@ var subtract = function(a, b) {
 var multiply = function(a, b) {
   
   if (isNaN(a) || isNaN(b))
-    throw new Error('Cannot multiply non-numeric values');
+    throw new Error('NaN');
 
   return a * b;
 };
@@ -26,10 +26,10 @@ var multiply = function(a, b) {
 var divide = function(a, b) {
   
   if (isNaN(a) || isNaN(b))
-    throw new Error('Cannot divide non-numeric values');
+    throw new Error('NaN');
   
   if (b === 0)
-    throw new Error('Cannot divide value by zero');
+    throw new Error('Zero divisor');
 
   return a / b;
 };
