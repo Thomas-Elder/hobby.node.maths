@@ -30,8 +30,17 @@ var mean = function(sample) {
   return sum/sample.length;  
 };
 
-var median = function() {
+var median = function(sample) {
 
+  for (var i = 0; i < sample.length; i++) {
+    if (isNaN(sample[i]))
+      throw new Error('NaN');
+  }
+
+  if (sample.length === 0)
+    throw new Error('Empty sample');
+
+  return sample[Math.floor(sample.length/2)]; 
 };
 
 var mode = function() {
