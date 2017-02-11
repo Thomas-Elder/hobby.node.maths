@@ -42,6 +42,60 @@ describe('Statistics', function(){
     });
   });
 
+  describe('frequency', function(){
+      
+    it('should return 1 when given the test sample and a value of 11', function(done){
+
+      var expected = 1;
+      var result = maths.frequency(sample, 11);
+
+      expect(result).toEqual(expected);
+
+      done();
+    });
+
+    it('should return 4 when given the test sample and a value of 25', function(done){
+
+      var expected = 4;
+      var result = maths.frequency(sample, 25);
+
+      expect(result).toEqual(expected);
+
+      done();
+    });
+
+    it('should return 0 when given the test sample and a value of 99', function(done){
+
+      var expected = 0;
+      var result = maths.frequency(sample, 99);
+
+      expect(result).toEqual(expected);
+
+      done();
+    });
+    
+    it('should throw a NaN error when the sample contains a non-numeric character', function(done){
+      
+      try {
+        maths.frequency(sampleNaN);
+      } catch (error) {
+        expect(error.message).toEqual('NaN');
+        done();
+      }
+    });
+
+    it('should throw an empty sample error the sample contains no elements', function(done){
+      
+      var sample = [];
+
+      try {
+        maths.frequency(sampleEmpty);
+      } catch (error) {
+        expect(error.message).toEqual('Empty sample');
+        done();
+      }
+    });
+  });
   
   describe('mean', function(){
       

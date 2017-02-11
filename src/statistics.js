@@ -12,6 +12,27 @@ var sampleSize = function(sample) {
   return sample.length;
 };
 
+var frequency = function(sample, val) {
+
+  for (var i = 0; i < sample.length; i++) {
+    if (isNaN(sample[i]))
+      throw new Error('NaN');
+  }
+  
+  if (sample.length === 0)
+    throw new Error('Empty sample');
+
+  var count = 0;
+
+  for (var i = 0; i < sample.length; i++) {
+    if (sample[i] === val) {
+      count++;
+    }
+  }
+
+  return count;
+};
+
 var mean = function(sample) {
 
   for (var i = 0; i < sample.length; i++) {
@@ -171,6 +192,7 @@ var standardDeviation = function(sample) {
 
 module.exports = {
   sampleSize,
+  frequency,
   mean,
   median,
   mode,

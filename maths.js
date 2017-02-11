@@ -10,6 +10,7 @@ module.exports = {
 
   // statistics
   sampleSize: statistics.sampleSize,
+  frequency: statistics.frequency,
   mean: statistics.mean,
   median: statistics.median,
   mode: statistics.mode,
