@@ -3,6 +3,7 @@ var maths = require('../maths');
 describe('Statistics', function(){
 
   var sample = [11, 23, 25, 158, 30, 21, 25, 16, 1, 26, 25, 29, 30, 25, 24, 23];
+  var sampleMM = [21, 23, 25, 158, 23, 21, 25, 16, 21, 23, 25, 21, 30, 25, 24, 23];
   var sampleOdd = [11, 23, 25, 158, 30, 21, 25, 16, 1, 26, 25, 29, 30, 25, 24, 23, 31];
   var sampleNaN = [11, 23, 25, "thing", 30, 21, 25, 16, 1, 26, 25, 29, 30, 25, 24, 23];
   var sampleEmpty = [];
@@ -177,12 +178,26 @@ describe('Statistics', function(){
   
   describe('mode', function(){
       
-    it('should return 25 when given the test sample', function(done){
+    it('should return an array containing 25 when given the test sample', function(done){
         
       var expected = 25;
-      var result = maths.mode(sample);
+      var result =  maths.mode(sample);
 
-      expect(result).toEqual(expected);
+      expect(result).toContain(expected);
+
+      done();
+    });
+
+    it('should return an array containing 21, 25 and 23 when given the multimodal test sample', function(done){
+        
+      var expectedVal1 = 25;
+      var expectedVal2 = 23;
+      var expectedVal3 = 21;
+      var result = maths.mode(sampleMM);
+
+      expect(result).toContain(expectedVal1);
+      expect(result).toContain(expectedVal2);
+      expect(result).toContain(expectedVal3);
 
       done();
     });

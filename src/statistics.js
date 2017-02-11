@@ -87,24 +87,20 @@ var mode = function(sample) {
     throw new Error('Empty sample');
 
   var high = 0;
-  var currentMode = 0;
+  var modes = [];
 
-  for (var i = 0; i < sample.length; i++) {
-    
-    var count = 1;
-    
-    for (var k = 0; k < sample.length; k++) {
-      if (sample[i] === sample[k])
-        count++;
-    }
-
-    if (count > high) {
-      currentMode = sample[i];
+  for (var i = 0; i < sample.length; i++) {     
+    var count = frequency(sample, sample[i]);
+    if (count > high)
       high = count;
-    } 
   }
 
-  return currentMode;
+  for (var i = 0; i < sample.length; i++) {
+    if (frequency(sample, sample[i]) === high && modes.indexOf(sample[i]) === -1)
+      modes.push(sample[i]);
+  }
+
+  return modes;
 };
 
 var range = function(sample){
