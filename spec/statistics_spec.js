@@ -187,6 +187,49 @@ describe('Statistics', function(){
     });
   });
 
+ describe('interquartileRange', function(){
+      
+    it('should return 5.5 when given the test sample with an even number of elements', function(done){
+        
+      var expected = 5.5;
+      var result = maths.interquartileRange(sample);
+
+      expect(result).toEqual(expected);
+
+      done();
+    });
+
+    it('should return 7.5 when given the test sample with an odd number of elements', function(done){
+        
+      var expected = 7.5;
+      var result = maths.interquartileRange(sampleOdd);
+
+      expect(result).toEqual(expected);
+
+      done();
+    });
+    
+    it('should throw a NaN error when given a non-numeric parameter', function(done){
+      
+      try {
+        maths.interquartileRange(sampleNaN);
+      } catch (error) {
+        expect(error.message).toEqual('NaN');
+        done();
+      }
+    });
+
+    it('should throw a divide by zero error when given zero as a second parameter', function(done){
+      
+      try {
+        maths.interquartileRange(sampleEmpty);
+      } catch (error) {
+        expect(error.message).toEqual('Empty sample');
+        done();
+      }
+    });
+  });
+
   describe('variance', function(){
       
     it('should return 1131.5625 when given the test sample', function(done){

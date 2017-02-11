@@ -14,6 +14,7 @@ module.exports = {
   median: statistics.median,
   mode: statistics.mode,
   range: statistics.range,
+  interquartileRange: statistics.interquartileRange,
   variance: statistics.variance,
   standardDeviation: statistics.standardDeviation
 };

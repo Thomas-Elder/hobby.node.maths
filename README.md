@@ -84,6 +84,14 @@ Returns the range of the sample.
 Throws an error if the sample contains non-numeric elements.
 Throws an error if the sample is empty.
 
+#### interquartileRange
+`interquartileRange(sample);`
+
+Returns the interquartile range range of the sample.
+
+Throws an error if the sample contains non-numeric elements.
+Throws an error if the sample is empty.
+
 #### variance
 `variance(sample);`
 

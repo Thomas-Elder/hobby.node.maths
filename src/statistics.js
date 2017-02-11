@@ -109,6 +109,33 @@ var range = function(sample){
   return max - min;
 };
 
+var interquartileRange = function(sample) {
+
+  for (var i = 0; i < sample.length; i++) {
+    if (isNaN(sample[i]))
+      throw new Error('NaN');
+  }
+
+  if (sample.length === 0)
+    throw new Error('Empty sample');
+
+  var sortedSample = sample.sort(function(a, b) { return a - b });
+
+  console.log(sortedSample);
+
+  var Q1, Q3;
+  
+  if (sampleSize(sortedSample) % 2 === 0) {
+    Q1 = median(sortedSample.slice(0, sortedSample.length / 2));
+    Q3 = median(sortedSample.slice(sortedSample.length / 2));
+  } else {
+    Q1 = median(sortedSample.slice(0, Math.floor(sortedSample.length / 2)));
+    Q3 = median(sortedSample.slice(Math.ceil(sortedSample.length / 2)));
+  }
+
+  return Q3 - Q1;
+};
+
 var variance = function(sample){
 
   for (var i = 0; i < sample.length; i++) {
@@ -148,6 +175,7 @@ module.exports = {
   median,
   mode,
   range,
+  interquartileRange,
   variance,
   standardDeviation
 }
