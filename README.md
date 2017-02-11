@@ -83,8 +83,6 @@ Returns the mode of the sample.
 Throws an error if the sample contains non-numeric elements.
 Throws an error if the sample is empty.
 
-Note this currently only supports single mode data sets. Support for multi-modal sets is in the works.
-
 #### range
 `range(sample);`
 
@@ -122,6 +120,13 @@ Throws an error if the sample is empty.
 Note there's no precision control on the return value at the moment.
 
 ## Changelog
+###v1.1.1
+Added changelog info on v1.1.0
+
+###v1.1.0
+Added the statistics functions to the module. 
+The mode function can now handle multimodal samples.
+
 ###v1.0.7
 Added API information to the README.md.
 

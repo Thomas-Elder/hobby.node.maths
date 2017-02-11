@@ -21,3 +21,7 @@ Ok so as of version 1.0.2, we have a reasonably functional arithmetic module. I'
 v1.0.7 is on NPM, and I managed to install and use it from a separate project.
 
 I think I've been using the versioning incorrectly, in that I kind of used it for every commit. It should really only be for every release. 
+
+So I published version 1.1.0, including the statistics module. 
+
+Further ideas include sorting algorithms, and trying to implement some more math functions like sqrt. Might leave it for now though. I think I've sort of ticked the goal of this project.
