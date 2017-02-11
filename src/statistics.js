@@ -121,8 +121,6 @@ var interquartileRange = function(sample) {
 
   var sortedSample = sample.sort(function(a, b) { return a - b });
 
-  console.log(sortedSample);
-
   var Q1, Q3;
   
   if (sampleSize(sortedSample) % 2 === 0) {
