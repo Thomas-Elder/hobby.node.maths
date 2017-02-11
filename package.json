@@ -1,6 +1,6 @@
 {
   "name": "thombsaway-maths",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "A module to provide some basic mathematic functions",
   "main": "maths.js",
   "directories": {
