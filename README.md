@@ -50,6 +50,15 @@ Returns the size of the sample.
 Throws an error if the sample contains non-numeric elements.
 Throws an error if the sample is empty.
 
+#### frequency
+`frequency(sample, val);`
+
+Returns the frequency of a value in the the sample. Returns 0 if the value is not in the sample.
+
+Throws an error if the sample contains non-numeric elements.
+Throws an error if the sample is empty.
+
+
 #### mean
 `mean(sample);`
 
