@@ -80,9 +80,9 @@ describe('Statistics', function(){
 
   describe('median', function(){
       
-    it('should return 8.5 when given the test sample with an even number of elements', function(done){
+    it('should return 25 when given the test sample with an even number of elements', function(done){
 
-      var expected = 8.5;
+      var expected = 25;
       var result = maths.median(sample);
 
       expect(result).toEqual(expected);
@@ -90,9 +90,9 @@ describe('Statistics', function(){
       done();
     });
 
-    it('should return 1 when given the test sample with an odd number of elements', function(done){
+    it('should return 25 when given the test sample with an odd number of elements', function(done){
 
-      var expected = 1;
+      var expected = 25;
       var result = maths.median(sampleOdd);
 
       expect(result).toEqual(expected);
